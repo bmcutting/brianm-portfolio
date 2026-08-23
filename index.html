@@ -64,12 +64,36 @@
         "image": "https://brianm-portfolio.vercel.app/og-image.jpg",
         "jobTitle": "Desarrollador de Software",
         "description": "Desarrollador de Software e Ingeniero en Automática especializado en React, TypeScript, Tailwind CSS y .NET/C#.",
-        "knowsAbout": ["React", "TypeScript", "JavaScript", "Tailwind CSS", ".NET", "C#", "PostgreSQL"],
+        "knowsAbout": [
+          "React",
+          "TypeScript",
+          "JavaScript",
+          "Tailwind CSS",
+          ".NET",
+          "C#",
+          "PostgreSQL"
+        ],
         "sameAs": [
           "https://github.com/bmcutting",
           "https://www.linkedin.com/in/brian-michel-morales-cutting"
         ]
       }
+    </script>
+    <script>
+      ;(function () {
+        try {
+          var saved = localStorage.getItem("theme")
+          var theme =
+            saved === "light" || saved === "dark"
+              ? saved
+              : window.matchMedia("(prefers-color-scheme: light)").matches
+                ? "light"
+                : "dark"
+          document.documentElement.classList.add(theme)
+        } catch (e) {
+          document.documentElement.classList.add("dark")
+        }
+      })()
     </script>
   </head>
   <body>
@@ -77,25 +101,27 @@
       <h1>Brian Michel Morales Cutting — Desarrollador de Software</h1>
       <p>
         Desarrollador con experiencia en software industrial y programación en .NET (C#).
-        Actualmente enfocado en frontend, creando interfaces modernas con React, TypeScript,
-        Tailwind CSS y HTML. Ingeniero en Automática. Disponible en España.
+        Actualmente enfocado en frontend, creando interfaces modernas con React,
+        TypeScript, Tailwind CSS y HTML. Ingeniero en Automática. Disponible en España.
       </p>
 
       <h2>Stack</h2>
-      <p>React, TypeScript, JavaScript, Tailwind CSS, HTML, CSS, .NET, C#, PostgreSQL, Git.</p>
+      <p>
+        React, TypeScript, JavaScript, Tailwind CSS, HTML, CSS, .NET, C#, PostgreSQL, Git.
+      </p>
 
       <h2>Proyectos</h2>
       <ul>
         <li>
           <strong>DealerNode — ERP automotriz.</strong> Desarrollo frontend de features
-          end-to-end sobre un ERP para concesionarios en React 19 y TypeScript: formularios,
-          tablas con filtrado y paginación, modales y flujos multipaso, con servicios HTTP
-          tipados y patrón Mapper. https://www.dealernode.net/
+          end-to-end sobre un ERP para concesionarios en React 19 y TypeScript:
+          formularios, tablas con filtrado y paginación, modales y flujos multipaso, con
+          servicios HTTP tipados y patrón Mapper. https://www.dealernode.net/
         </li>
         <li>
           <strong>Interfaz IIoT.</strong> Proyecto en .NET/C# con arquitectura de
-          microservicios orientada a Edge Computing, para integrar dispositivos industriales
-          mediante Modbus, MQTT y OPC UA.
+          microservicios orientada a Edge Computing, para integrar dispositivos
+          industriales mediante Modbus, MQTT y OPC UA.
         </li>
         <li>
           <strong>CodeAgenda.</strong> Aplicación en .NET para organizar proyectos de
@@ -114,8 +140,7 @@
 
       <h2>Contacto</h2>
       <p>
-        Email: bmoralescutting@gmail.com ·
-        GitHub: https://github.com/bmcutting ·
+        Email: bmoralescutting@gmail.com · GitHub: https://github.com/bmcutting ·
         LinkedIn: https://www.linkedin.com/in/brian-michel-morales-cutting
       </p>
     </noscript>

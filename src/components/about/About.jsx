@@ -1,9 +1,7 @@
-import { SkillsGrid } from "./SkillsGrid";
-import { Timeline } from "./Timeline";
+import { SkillsGrid } from "./SkillsGrid"
+import { Timeline } from "./Timeline"
 
 export const About = () => {
-
-
   return (
     <section
       className="py-10 px-4 sm:px-6 lg:px-8 bg-background dark:bg-backgroundDark"
@@ -29,5 +27,5 @@ export const About = () => {
         </div>
       </div>
     </section>
-  );
-};
+  )
+}

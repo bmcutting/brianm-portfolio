@@ -1,11 +1,11 @@
-import { FiShare2 } from "react-icons/fi";
-import { FaWhatsapp } from "react-icons/fa";
+import { FiShare2 } from "react-icons/fi"
+import { FaWhatsapp } from "react-icons/fa"
 
-const PORTFOLIO_URL = "https://brianm-portfolio.vercel.app/";
+const PORTFOLIO_URL = "https://brianm-portfolio.vercel.app/"
 const shareText = encodeURIComponent(
   `Mira mi portfolio como Desarrollador de Software 👉 ${PORTFOLIO_URL}`
-);
-const whatsappShareUrl = `https://wa.me/?text=${shareText}`;
+)
+const whatsappShareUrl = `https://wa.me/?text=${shareText}`
 
 export const ShareButton = () => {
   return (
@@ -22,5 +22,5 @@ export const ShareButton = () => {
       </span>
       <span className="hidden sm:inline text-sm font-semibold">Compartir</span>
     </a>
-  );
-};
+  )
+}

@@ -1,4 +1,4 @@
-import { experience } from "./experienceData";
+import { experience } from "./experienceData"
 
 export const Experience = () => {
   return (
@@ -56,5 +56,5 @@ export const Experience = () => {
         </ol>
       </div>
     </section>
-  );
-};
+  )
+}

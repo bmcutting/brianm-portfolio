@@ -27,5 +27,5 @@ export const HabilitiesLayout = ({ habilities, label }) => {
         ))}
       </div>
     </div>
-  );
-};
+  )
+}

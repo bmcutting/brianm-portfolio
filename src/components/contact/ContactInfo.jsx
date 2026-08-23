@@ -1,5 +1,5 @@
-import { BsGithub, BsLinkedin } from "react-icons/bs";
-import { MdEmail } from "react-icons/md";
+import { BsGithub, BsLinkedin } from "react-icons/bs"
+import { MdEmail } from "react-icons/md"
 
 export const ContactInfo = () => {
   return (
@@ -14,9 +14,7 @@ export const ContactInfo = () => {
             </div>
             <div>
               <p className="font-medium">Ubicación</p>
-              <p className="text-gray-600 dark:text-gray-300">
-                La Habana/Matanzas, Cuba
-              </p>
+              <p className="text-gray-600 dark:text-gray-300">La Habana/Matanzas, Cuba</p>
             </div>
           </div>
 
@@ -93,5 +91,5 @@ export const ContactInfo = () => {
         </div>
       </div>
     </div>
-  );
-};
+  )
+}

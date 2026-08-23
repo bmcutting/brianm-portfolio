@@ -1,2 +1,2 @@
-import { createContext } from "react";
-export const ActiveSectionContext = createContext();
+import { createContext } from "react"
+export const ActiveSectionContext = createContext()

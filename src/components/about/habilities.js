@@ -1,14 +1,14 @@
-import Cs from "../../assets/icons/cs.svg";
-import Css from "../../assets/icons/css.svg";
-import Dotnet from "../../assets/icons/dotnet.svg";
-import Github from "../../assets/icons/github.svg";
-import HTML from "../../assets/icons/html.svg";
-import Postgresql from "../../assets/icons/postgresql.svg";
-import React from "../../assets/icons/react.svg";
-import Vs from "../../assets/icons/visualstudio.svg";
-import Tailwind from "../../assets/icons/tailwindcss.svg";
-import TypeScript from "../../assets/icons/typescript.svg";
-import JavaScript from "../../assets/icons/javascript.svg";
+import Cs from "../../assets/icons/cs.svg"
+import Css from "../../assets/icons/css.svg"
+import Dotnet from "../../assets/icons/dotnet.svg"
+import Github from "../../assets/icons/github.svg"
+import HTML from "../../assets/icons/html.svg"
+import Postgresql from "../../assets/icons/postgresql.svg"
+import React from "../../assets/icons/react.svg"
+import Vs from "../../assets/icons/visualstudio.svg"
+import Tailwind from "../../assets/icons/tailwindcss.svg"
+import TypeScript from "../../assets/icons/typescript.svg"
+import JavaScript from "../../assets/icons/javascript.svg"
 
 export const habilities = [
   // Backend
@@ -27,4 +27,4 @@ export const habilities = [
   // Others / herramientas
   { img: Github, label: "Github", type: "others" },
   { img: Vs, label: "Visual Studio", type: "others" },
-];
+]

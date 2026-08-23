@@ -1,8 +1,8 @@
-import EFSET from "../../assets/images/efset.webp";
-import CS from "../../assets/images/foundationalCS.webp";
-import Web from "../../assets/images/responsiveWeb.webp";
-import FrontEnd from "../../assets/images/frontEnd.webp";
-import B1English from "../../assets/images/b1English.webp";
+import EFSET from "../../assets/images/efset.webp"
+import CS from "../../assets/images/foundationalCS.webp"
+import Web from "../../assets/images/responsiveWeb.webp"
+import FrontEnd from "../../assets/images/frontEnd.webp"
+import B1English from "../../assets/images/b1English.webp"
 
 export const certifications = [
   {
@@ -50,4 +50,4 @@ export const certifications = [
     img: B1English,
     link: "https://www.freecodecamp.org/certification/brianmichel/b1-english-for-developers",
   },
-];
+]

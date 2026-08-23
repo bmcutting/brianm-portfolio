@@ -1,9 +1,9 @@
-import { useState } from "react";
-import { projects } from "./projects";
-import { ViewMore } from "./ViewMore";
+import { useState } from "react"
+import { projects } from "./projects"
+import { ViewMore } from "./ViewMore"
 
 export const ProjectPage = () => {
-  const [selectedProject, setSelectedProject] = useState(null);
+  const [selectedProject, setSelectedProject] = useState(null)
 
   return (
     <section
@@ -52,5 +52,5 @@ export const ProjectPage = () => {
         />
       )}
     </section>
-  );
-};
+  )
+}

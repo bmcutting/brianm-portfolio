@@ -1,27 +1,24 @@
-import { useState, useEffect } from "react";
-import { FiExternalLink } from "react-icons/fi";
-import { certifications } from "./certifications";
+import { useState, useEffect } from "react"
+import { FiExternalLink } from "react-icons/fi"
+import { certifications } from "./certifications"
 
 const categoryStyles = {
-  Frontend:
-    "bg-blue-100 text-blue-700 dark:bg-blue-900/50 dark:text-blue-300",
-  Backend:
-    "bg-violet-100 text-violet-700 dark:bg-violet-900/50 dark:text-violet-300",
-  Idioma:
-    "bg-emerald-100 text-emerald-700 dark:bg-emerald-900/50 dark:text-emerald-300",
-};
+  Frontend: "bg-blue-100 text-blue-700 dark:bg-blue-900/50 dark:text-blue-300",
+  Backend: "bg-violet-100 text-violet-700 dark:bg-violet-900/50 dark:text-violet-300",
+  Idioma: "bg-emerald-100 text-emerald-700 dark:bg-emerald-900/50 dark:text-emerald-300",
+}
 
 export const CertificationsPage = () => {
-  const [zoomed, setZoomed] = useState(null);
+  const [zoomed, setZoomed] = useState(null)
 
   useEffect(() => {
-    if (!zoomed) return;
+    if (!zoomed) return
     const onKeyDown = (e) => {
-      if (e.key === "Escape") setZoomed(null);
-    };
-    window.addEventListener("keydown", onKeyDown);
-    return () => window.removeEventListener("keydown", onKeyDown);
-  }, [zoomed]);
+      if (e.key === "Escape") setZoomed(null)
+    }
+    window.addEventListener("keydown", onKeyDown)
+    return () => window.removeEventListener("keydown", onKeyDown)
+  }, [zoomed])
 
   return (
     <section
@@ -37,8 +34,17 @@ export const CertificationsPage = () => {
         {certifications.map((certification) => (
           <div
             key={certification.id}
+            role="button"
+            tabIndex={0}
+            aria-label={`Ampliar certificación ${certification.title}`}
             onClick={() => setZoomed(certification)}
-            className="group flex flex-col cursor-pointer bg-gray-50 dark:bg-gray-800 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2"
+            onKeyDown={(e) => {
+              if (e.key === "Enter" || e.key === " ") {
+                e.preventDefault()
+                setZoomed(certification)
+              }
+            }}
+            className="group flex flex-col cursor-pointer bg-gray-50 dark:bg-gray-800 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
           >
             <div className="flex items-center justify-center bg-white dark:bg-gray-900 h-44 p-2 border-b border-gray-100 dark:border-gray-700">
               <img
@@ -86,7 +92,12 @@ export const CertificationsPage = () => {
       </div>
 
       {zoomed && (
+        /* El overlay cierra al pulsar fuera; el teclado se cubre con Escape y el botón Cerrar. */
+        /* eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-noninteractive-element-interactions */
         <div
+          role="dialog"
+          aria-modal="true"
+          aria-label={`Certificación ${zoomed.title}`}
           onClick={() => setZoomed(null)}
           className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 backdrop-blur-sm p-4 cursor-pointer"
         >
@@ -98,6 +109,7 @@ export const CertificationsPage = () => {
             >
               ×
             </button>
+            {/* eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-noninteractive-element-interactions */}
             <img
               src={zoomed.img}
               alt={`Certificación ${zoomed.title} — ${zoomed.issuer}`}
@@ -108,5 +120,5 @@ export const CertificationsPage = () => {
         </div>
       )}
     </section>
-  );
-};
+  )
+}

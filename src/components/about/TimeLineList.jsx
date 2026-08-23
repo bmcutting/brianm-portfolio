@@ -1,4 +1,4 @@
-import React from "react";
+import React from "react"
 
 export const TimeLineList = ({ title, description }) => {
   return (
@@ -11,5 +11,5 @@ export const TimeLineList = ({ title, description }) => {
         {description}
       </p>
     </li>
-  );
-};
+  )
+}

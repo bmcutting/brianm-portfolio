@@ -1,15 +1,15 @@
-import Sun from "../../assets/icons/sun.svg";
-import Moon from "../../assets/icons/moon.svg";
-import { useContext } from "react";
-import { ThemeContext } from "../../contexts/Theme/ThemeContext";
+import Sun from "../../assets/icons/sun.svg"
+import Moon from "../../assets/icons/moon.svg"
+import { useContext } from "react"
+import { ThemeContext } from "../../contexts/Theme/ThemeContext"
 
 export const Toggle = () => {
-  const { theme, handleChangeTheme } = useContext(ThemeContext);
+  const { theme, handleChangeTheme } = useContext(ThemeContext)
 
   const toggleTheme = () => {
-    const newTheme = theme === 'dark' ? 'light' : 'dark';
-    handleChangeTheme(newTheme);
-  };
+    const newTheme = theme === "dark" ? "light" : "dark"
+    handleChangeTheme(newTheme)
+  }
 
   return (
     <button
@@ -19,13 +19,13 @@ export const Toggle = () => {
       <img
         src={Sun}
         alt="sun"
-        className={`w-6 transition-opacity duration-300 ${theme === 'light' ? 'opacity-100' : 'opacity-50'}`}
+        className={`w-6 transition-opacity duration-300 ${theme === "light" ? "opacity-100" : "opacity-50"}`}
       />
       <img
         src={Moon}
         alt="moon"
-        className={`w-6 transition-opacity duration-300 ${theme === 'dark' ? 'opacity-100' : 'opacity-50'}`}
+        className={`w-6 transition-opacity duration-300 ${theme === "dark" ? "opacity-100" : "opacity-50"}`}
       />
     </button>
-  );
-};
+  )
+}

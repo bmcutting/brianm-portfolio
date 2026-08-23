@@ -1,4 +1,4 @@
-import { TimeLineList } from "./TimeLineList";
+import { TimeLineList } from "./TimeLineList"
 
 export const Timeline = () => {
   return (
@@ -6,9 +6,7 @@ export const Timeline = () => {
       <ol className="relative border-s-2 border-gray-200 dark:border-gray-700">
         <TimeLineList
           title={"🎓 Formación académica"}
-          description={
-            "Ingeniero en Automática, especializado en software industrial."
-          }
+          description={"Ingeniero en Automática, especializado en software industrial."}
         />
         <TimeLineList
           title={"💼 Experiencia profesional"}
@@ -18,9 +16,7 @@ export const Timeline = () => {
         />
         <TimeLineList
           title={"🧠 Backend"}
-          description={
-            " Desarrollo con .NET (C#), APIs REST y arquitecturas limpias."
-          }
+          description={" Desarrollo con .NET (C#), APIs REST y arquitecturas limpias."}
         />
         <TimeLineList
           title={"🎨 Frontend"}
@@ -28,5 +24,5 @@ export const Timeline = () => {
         />
       </ol>
     </div>
-  );
-};
+  )
+}

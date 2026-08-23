@@ -1,6 +1,6 @@
-import Programming from "../../assets/images/programming.webp";
-import EdgeComputing from "../../assets/images/edgeComputing.webp";
-import Car from "../../assets/images/car.webp";
+import Programming from "../../assets/images/programming.webp"
+import EdgeComputing from "../../assets/images/edgeComputing.webp"
+import Car from "../../assets/images/car.webp"
 
 export const projects = [
   {
@@ -33,4 +33,4 @@ export const projects = [
     deploy: null,
     image: Programming,
   },
-];
+]

@@ -5,8 +5,19 @@
 @custom-variant dark (&:where(.dark, .dark *));
 
 @theme {
-  --color-primary: #59B256;
-  --color-primaryDark: #C9A0DC;
-  --color-background: #FFFFFF;
-  --color-backgroundDark: #1E1F25;
+  --color-primary: #59b256;
+  --color-primaryDark: #c9a0dc;
+  --color-background: #ffffff;
+  --color-backgroundDark: #1e1f25;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }

@@ -1,8 +1,7 @@
-import Brian from "../../assets/images/BrianPic.webp";
-import { FaGithub, FaLinkedinIn } from "react-icons/fa";
+import Brian from "../../assets/images/BrianPic.webp"
+import { FaGithub, FaLinkedinIn } from "react-icons/fa"
 
 export const Intro = () => {
-
   return (
     <section
       className="min-h-screen w-full grid lg:grid-cols-2 grid-cols-1 pt-[6vh] md:pt-[10vh] px-4 sm:px-6 lg:px-8
@@ -22,27 +21,19 @@ export const Intro = () => {
             Desarrollador de Software
           </p>
           <p className="text-sm sm:text-lg md:text-xl lg:text-2xl text-justify text-gray-600 dark:text-gray-400 md:leading-relaxed">
-            Desarrollador con experiencia en software industrial y programación
-            en{" "}
+            Desarrollador con experiencia en software industrial y programación en{" "}
             <strong className="text-[#7c5cff] animate-pulse drop-shadow-md">
               .NET (C#)
             </strong>
             . Actualmente enfocado en frontend, creando interfaces modernas con{" "}
-            <strong className="text-[#61dafb] animate-pulse drop-shadow-md">
-              React
-            </strong>
+            <strong className="text-[#61dafb] animate-pulse drop-shadow-md">React</strong>
             ,{" "}
             <strong className="text-[#38bdf8] animate-pulse drop-shadow-md">
               Tailwind CSS
             </strong>
             ,{" "}
-            <strong className="text-[#e34c26] animate-pulse drop-shadow-md">
-              HTML
-            </strong>{" "}
-            y{" "}
-            <strong className="text-[#264de4] animate-pulse drop-shadow-md">
-              CSS
-            </strong>
+            <strong className="text-[#e34c26] animate-pulse drop-shadow-md">HTML</strong>{" "}
+            y <strong className="text-[#264de4] animate-pulse drop-shadow-md">CSS</strong>
             .
           </p>
         </div>
@@ -82,5 +73,5 @@ export const Intro = () => {
         </div>
       </div>
     </section>
-  );
-};
+  )
+}
