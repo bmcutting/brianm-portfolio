@@ -50,17 +50,21 @@ await sharp(favSrc)
   .toFile(join(PUBLIC_DIR, "favicon-tmp.png"))
 before += favBefore
 
-const ogSrc = join(PUBLIC_DIR, "og-image.png")
+const ogSrc = "src/assets/og-banner-source.png"
 const ogBefore = (await stat(ogSrc)).size
-await sharp(ogSrc)
-  .resize({ width: 1200, height: 630, fit: "cover", position: "center" })
-  .jpeg({ quality: 85 })
+const [ogBackground, ogBanner] = await Promise.all([
+  sharp(ogSrc).resize({ width: 1200, height: 630, fit: "cover" }).blur(40).toBuffer(),
+  sharp(ogSrc).resize({ width: 1150 }).toBuffer(),
+])
+await sharp(ogBackground)
+  .composite([{ input: ogBanner, gravity: "center" }])
+  .jpeg({ quality: 88 })
   .toFile(join(PUBLIC_DIR, "og-image.jpg"))
 const ogAfter = (await stat(join(PUBLIC_DIR, "og-image.jpg"))).size
 before += ogBefore
 after += ogAfter
 console.log(
-  `${"og-image.png".padEnd(24)} ${kb(ogBefore)} -> ${kb(ogAfter)}  (og-image.jpg 1200x630)`
+  `${"og-banner-source.png".padEnd(24)} ${kb(ogBefore)} -> ${kb(ogAfter)}  (og-image.jpg 1200x630)`
 )
 
 console.log("\nTOTAL " + kb(before) + " -> " + kb(after))
