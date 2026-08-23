@@ -2,7 +2,7 @@
 
 Portfolio personal de **Brian Michel Morales Cutting**, Desarrollador de Software e Ingeniero en Automática.
 
-### 🌐 [Ver el portfolio en vivo → bmcutting.github.io/brian-portfolio](https://bmcutting.github.io/brian-portfolio/)
+### 🌐 [Ver el portfolio en vivo → brian-portfolio.vercel.app](https://brian-portfolio.vercel.app/)
 
 Especializado en **React, TypeScript, Tailwind CSS** y **.NET / C#**. Con experiencia en desarrollo frontend, APIs REST y automatización industrial.
 
@@ -36,6 +36,6 @@ npm run deploy   # desplegar en GitHub Pages
 
 ## 🔗 Enlaces
 
-- 🌐 Portfolio: https://bmcutting.github.io/brian-portfolio/
+- 🌐 Portfolio: https://brian-portfolio.vercel.app/
 - 💼 LinkedIn: https://www.linkedin.com/in/brian-michel-morales-cutting
 - 🐙 GitHub: https://github.com/bmcutting

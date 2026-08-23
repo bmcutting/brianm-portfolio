@@ -1,20 +1,30 @@
 import { useContactForm } from "../../hooks/useContactForm";
 
 export const ContactForm = () => {
-  const { formData, done, loading, formRef, handleChange, handleSubmit } =
+  const { formData, done, error, loading, formRef, handleChange, handleSubmit } =
     useContactForm();
 
   return (
     <div className="bg-gray-50 dark:bg-gray-800 rounded-2xl p-8 shadow-lg">
       <h2 className="text-2xl font-semibold mb-6">Envíame un mensaje</h2>
-      {done && (
-        <div
-          className="mb-6 p-4 bg-green-100 dark:bg-green-900 border border-green-400 
-        dark:border-green-600 text-green-800 dark:text-green-200 rounded-lg"
-        >
-          ✅ ¡Mensaje enviado con éxito! Te contactaré pronto.
-        </div>
-      )}
+      <div aria-live="polite" role="status">
+        {done && (
+          <div
+            className="mb-6 p-4 bg-green-100 dark:bg-green-900 border border-green-400 
+          dark:border-green-600 text-green-800 dark:text-green-200 rounded-lg"
+          >
+            ✅ ¡Mensaje enviado con éxito! Te contactaré pronto.
+          </div>
+        )}
+        {error && (
+          <div
+            className="mb-6 p-4 bg-red-100 dark:bg-red-900 border border-red-400 
+          dark:border-red-600 text-red-800 dark:text-red-200 rounded-lg"
+          >
+            ⚠️ {error}
+          </div>
+        )}
+      </div>
       <form ref={formRef} onSubmit={handleSubmit} className="space-y-6">
         <div>
           <label htmlFor="name" className="block text-sm font-medium mb-2">

@@ -7,20 +7,21 @@ export function useActiveSection() {
   const sectionRatios = useRef(new Map()); // Guardamos ratios de todas las secciones
 
   useEffect(() => {
+    const ratios = sectionRatios.current;
     const sections = document.querySelectorAll('[data-section]');
     
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
           // Actualizamos el ratio de cada sección
-          sectionRatios.current.set(entry.target.dataset.section, entry.intersectionRatio);
+          ratios.set(entry.target.dataset.section, entry.intersectionRatio);
         });
 
         // Encontramos la sección con mayor ratio de intersección
         let maxRatio = 0;
         let mostVisibleSection = '';
 
-        sectionRatios.current.forEach((ratio, sectionId) => {
+        ratios.forEach((ratio, sectionId) => {
           if (ratio > maxRatio) {
             maxRatio = ratio;
             mostVisibleSection = sectionId;
@@ -42,7 +43,7 @@ export function useActiveSection() {
     
     return () => {
       observer.disconnect();
-      sectionRatios.current.clear();
+      ratios.clear();
     };
   }, [setActiveSection]);
 }

@@ -1,15 +1,23 @@
-// hooks/useContactForm.js
 import { useState, useRef } from "react";
 import emailjs from "@emailjs/browser";
 
+const SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+const TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+const PUBLIC_KEY = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
+
+const EMAIL_PATTERN = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+const EMPTY_FORM = {
+  user_name: "",
+  user_email: "",
+  user_subject: "",
+  message: "",
+};
+
 export const useContactForm = () => {
-  const [formData, setFormData] = useState({
-    user_name: "",
-    user_email: "",
-    user_subject: "",
-    message: "",
-  });
+  const [formData, setFormData] = useState(EMPTY_FORM);
   const [done, setDone] = useState(false);
+  const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
   const formRef = useRef();
 
@@ -18,39 +26,44 @@ export const useContactForm = () => {
       ...formData,
       [e.target.name]: e.target.value,
     });
+    if (error) setError("");
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
+    if (!EMAIL_PATTERN.test(formData.user_email)) {
+      setError("Introduce una dirección de email válida.");
+      return;
+    }
+
+    if (!SERVICE_ID || !TEMPLATE_ID || !PUBLIC_KEY) {
+      setError(
+        "El formulario no está configurado. Escríbeme directamente por email."
+      );
+      return;
+    }
+
     setLoading(true);
+    setError("");
 
     emailjs
-      .sendForm(
-        "service_g9hv03q",
-        "template_sa8ple7",
-        formRef.current,
-        "F7M9IZfavEec8egYK"
-      )
+      .sendForm(SERVICE_ID, TEMPLATE_ID, formRef.current, PUBLIC_KEY)
       .then(
         () => {
-          console.log("SUCCESS!");
           setDone(true);
           setLoading(false);
-          setFormData({
-            user_name: "",
-            user_email: "",
-            user_subject: "",
-            message: "",
-          });
+          setFormData(EMPTY_FORM);
 
           setTimeout(() => {
             setDone(false);
           }, 5000);
         },
-        (error) => {
-          console.log("FAILED...", error.text);
+        () => {
           setLoading(false);
-          alert("Error al enviar el mensaje. Por favor, intenta nuevamente.");
+          setError(
+            "No se pudo enviar el mensaje. Inténtalo de nuevo en unos minutos."
+          );
         }
       );
   };
@@ -58,6 +71,7 @@ export const useContactForm = () => {
   return {
     formData,
     done,
+    error,
     loading,
     formRef,
     handleChange,
