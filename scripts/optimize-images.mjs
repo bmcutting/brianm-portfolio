@@ -52,12 +52,17 @@ before += favBefore
 
 const ogSrc = "src/assets/og-banner-source.png"
 const ogBefore = (await stat(ogSrc)).size
-const [ogBackground, ogBanner] = await Promise.all([
-  sharp(ogSrc).resize({ width: 1200, height: 630, fit: "cover" }).blur(40).toBuffer(),
-  sharp(ogSrc).resize({ width: 1150 }).toBuffer(),
-])
-await sharp(ogBackground)
-  .composite([{ input: ogBanner, gravity: "center" }])
+const { width: ogW, height: ogH } = await sharp(ogSrc).metadata()
+const cropWidth = 1420
+const cropHeight = Math.round((cropWidth * 630) / 1200)
+await sharp(ogSrc)
+  .extract({
+    left: ogW - cropWidth - 40,
+    top: Math.round((ogH - cropHeight) / 2) + 18,
+    width: cropWidth,
+    height: cropHeight,
+  })
+  .resize(1200, 630)
   .jpeg({ quality: 88 })
   .toFile(join(PUBLIC_DIR, "og-image.jpg"))
 const ogAfter = (await stat(join(PUBLIC_DIR, "og-image.jpg"))).size
