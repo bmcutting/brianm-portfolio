@@ -1,4 +1,4 @@
-import Brian from "../../assets/images/BrianPic.png";
+import Brian from "../../assets/images/BrianPic.webp";
 import { FaGithub, FaLinkedinIn } from "react-icons/fa";
 
 export const Intro = () => {
@@ -56,7 +56,9 @@ export const Intro = () => {
         >
           <img
             src={Brian}
-            alt="Imagen"
+            alt="Brian Michel Morales Cutting"
+            width="700"
+            height="700"
             className="w-full h-full object-cover"
           />
         </div>

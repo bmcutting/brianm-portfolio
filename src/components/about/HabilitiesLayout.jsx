@@ -15,6 +15,8 @@ export const HabilitiesLayout = ({ habilities, label }) => {
               <img
                 src={item.img}
                 alt={item.label}
+                loading="lazy"
+                decoding="async"
                 className="object-contain max-w-2/3 max-h-2/3 lg:max-w-8/10"
               />
               <span className="mt-2 text-sm font-medium text-center text-gray-500 dark:text-gray-400">

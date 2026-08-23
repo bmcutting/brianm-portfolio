@@ -11,6 +11,10 @@ export const ViewMore = ({selectedProject, setSelectedProject}) => {
             <img
               src={selectedProject.image}
               alt={selectedProject.title}
+              loading="lazy"
+              decoding="async"
+              width="900"
+              height="600"
               className="w-full h-56 object-cover rounded-xl mb-5"
             />
             <h2 className="text-3xl font-bold mb-3">{selectedProject.title}</h2>

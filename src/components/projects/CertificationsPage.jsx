@@ -44,6 +44,10 @@ export const CertificationsPage = () => {
               <img
                 src={certification.img}
                 alt={`Certificación ${certification.title} — ${certification.issuer}`}
+                loading="lazy"
+                decoding="async"
+                width="900"
+                height="600"
                 className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-300"
               />
             </div>

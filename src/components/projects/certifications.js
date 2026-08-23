@@ -1,8 +1,8 @@
-import EFSET from "../../assets/images/efset.png";
-import CS from "../../assets/images/foundationalCS.png";
-import Web from "../../assets/images/responsiveWeb.png";
-import FrontEnd from "../../assets/images/frontEnd.png";
-import B1English from "../../assets/images/b1English.png";
+import EFSET from "../../assets/images/efset.webp";
+import CS from "../../assets/images/foundationalCS.webp";
+import Web from "../../assets/images/responsiveWeb.webp";
+import FrontEnd from "../../assets/images/frontEnd.webp";
+import B1English from "../../assets/images/b1English.webp";
 
 export const certifications = [
   {

@@ -1,6 +1,6 @@
-import Programming from "../../assets/images/programming.jpg";
-import EdgeComputing from "../../assets/images/edgeComputing.jpg";
-import Car from "../../assets/images/car.jpg";
+import Programming from "../../assets/images/programming.webp";
+import EdgeComputing from "../../assets/images/edgeComputing.webp";
+import Car from "../../assets/images/car.webp";
 
 export const projects = [
   {
