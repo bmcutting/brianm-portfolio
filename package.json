@@ -1,5 +1,5 @@
 {
-  "name": "brian-portfolio",
+  "name": "brianm-portfolio",
   "private": true,
   "version": "1.0.0",
   "description": "Portfolio personal de Brian Michel Morales Cutting, desarrollador de software especializado en React, TypeScript y .NET/C#.",
@@ -7,9 +7,9 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/bmcutting/brian-portfolio.git"
+    "url": "https://github.com/bmcutting/brianm-portfolio.git"
   },
-  "homepage": "https://brian-portfolio.vercel.app",
+  "homepage": "https://brianm-portfolio.vercel.app",
   "keywords": [
     "portfolio",
     "react",

@@ -1,7 +1,7 @@
 import { FiShare2 } from "react-icons/fi";
 import { FaWhatsapp } from "react-icons/fa";
 
-const PORTFOLIO_URL = "https://brian-portfolio.vercel.app/";
+const PORTFOLIO_URL = "https://brianm-portfolio.vercel.app/";
 const shareText = encodeURIComponent(
   `Mira mi portfolio como Desarrollador de Software 👉 ${PORTFOLIO_URL}`
 );
