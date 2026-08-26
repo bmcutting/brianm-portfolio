@@ -3,6 +3,7 @@ import CS from "../../assets/images/foundationalCS.webp"
 import Web from "../../assets/images/responsiveWeb.webp"
 import FrontEnd from "../../assets/images/frontEnd.webp"
 import B1English from "../../assets/images/b1English.webp"
+import AprendeSQL from "../../assets/images/aprendeSQL.webp"
 
 export const certifications = [
   {
@@ -49,5 +50,14 @@ export const certifications = [
     category: "Idioma",
     img: B1English,
     link: "https://www.freecodecamp.org/certification/brianmichel/b1-english-for-developers",
+  },
+  {
+    id: 6,
+    title: "Aprende SQL",
+    issuer: "midudev",
+    date: "2026",
+    category: "Backend",
+    img: AprendeSQL,
+    link: "https://certificados.midudev.com/8b81e76d-6d2b-4544-b93e-de947f6b80e6.pdf",
   },
 ]

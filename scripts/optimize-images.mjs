@@ -15,6 +15,7 @@ const targets = {
   "foundationalCS.png": 900,
   "frontEnd.png": 900,
   "responsiveWeb.png": 900,
+  "aprendeSQL.jpg": 900,
 }
 
 const kb = (n) => (n / 1024).toFixed(0).padStart(5) + " KB"

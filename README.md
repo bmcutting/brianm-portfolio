@@ -12,7 +12,7 @@ Especializado en **React, TypeScript, Tailwind CSS** y **.NET / C#**. Con experi
 - **Acerca de mí** — trayectoria y habilidades técnicas.
 - **Experiencia** — historial profesional.
 - **Proyectos** — trabajos destacados con detalle.
-- **Certificaciones** — certificados verificables (freeCodeCamp, EF SET).
+- **Certificaciones** — certificados verificables (freeCodeCamp, EF SET, midudev).
 - **Contacto** — formulario y datos de contacto.
 
 ## 🛠️ Tecnologías
