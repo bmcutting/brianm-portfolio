@@ -1,31 +1,59 @@
-import { useContactForm } from "../../hooks/useContactForm"
+import { MESSAGE_MAX_LENGTH, useContactForm } from "../../hooks/useContactForm"
+
+const labelClassName =
+  "text-xs uppercase tracking-wider font-semibold text-gray-600 dark:text-gray-400"
+
+const inputClassName =
+  "w-full rounded-lg border border-gray-300 dark:border-white/15 bg-white dark:bg-white/5 px-3.5 py-2.5 text-gray-900 dark:text-gray-100 placeholder:text-gray-500 dark:placeholder:text-gray-400 transition-colors focus:outline-none focus:border-primaryInk dark:focus:border-primaryDark aria-[invalid=true]:border-red-700 aria-[invalid=true]:focus:border-red-700 dark:aria-[invalid=true]:border-red-300 dark:aria-[invalid=true]:focus:border-red-300"
+
+// El hueco del error está siempre reservado: al aparecer un mensaje no se
+// desplaza nada (antes empujaba el botón fuera de la pantalla).
+const FieldError = ({ id, message }) => (
+  <p id={id} className="min-h-5 text-sm text-red-700 dark:text-red-300">
+    {message}
+  </p>
+)
 
 export const ContactForm = () => {
-  const { formData, done, error, loading, formRef, handleChange, handleSubmit } =
-    useContactForm()
+  const {
+    formData,
+    errors,
+    status,
+    submitError,
+    sentTo,
+    formRef,
+    handleChange,
+    handleBlur,
+    handleSubmit,
+  } = useContactForm()
+
+  const fieldProps = (name) => ({
+    id: name,
+    name,
+    value: formData[name],
+    onChange: handleChange,
+    onBlur: handleBlur,
+    required: true,
+    "aria-invalid": errors[name] ? "true" : undefined,
+    "aria-describedby": errors[name] ? `${name}-error` : undefined,
+  })
 
   return (
-    <div className="bg-gray-50 dark:bg-gray-800 rounded-2xl p-8 shadow-lg">
-      <h2 className="text-2xl font-semibold mb-6">Envíame un mensaje</h2>
-      <div aria-live="polite" role="status">
-        {done && (
-          <div
-            className="mb-6 p-4 bg-green-100 dark:bg-green-900 border border-green-400 
-          dark:border-green-600 text-green-800 dark:text-green-200 rounded-lg"
-          >
-            ✅ ¡Mensaje enviado con éxito! Te contactaré pronto.
-          </div>
-        )}
-        {error && (
-          <div
-            className="mb-6 p-4 bg-red-100 dark:bg-red-900 border border-red-400 
-          dark:border-red-600 text-red-800 dark:text-red-200 rounded-lg"
-          >
-            ⚠️ {error}
-          </div>
-        )}
-      </div>
-      <form ref={formRef} onSubmit={handleSubmit} className="space-y-6">
+    <div>
+      <h2
+        id="contact-form-title"
+        className="text-2xl sm:text-3xl font-bold tracking-tight mb-2"
+      >
+        Envíame un mensaje
+      </h2>
+      <p className="mb-8 text-gray-600 dark:text-gray-400">Te respondo por email.</p>
+      <form
+        ref={formRef}
+        onSubmit={handleSubmit}
+        noValidate
+        aria-labelledby="contact-form-title"
+        className="grid content-start gap-3"
+      >
         <div className="absolute left-[-9999px]" aria-hidden="true">
           <label htmlFor="website">No rellenar</label>
           <input
@@ -37,85 +65,79 @@ export const ContactForm = () => {
           />
         </div>
 
-        <div>
-          <label htmlFor="name" className="block text-sm font-medium mb-2">
-            Nombre completo
+        <div className="grid gap-1.5">
+          <label htmlFor="user_name" className={labelClassName}>
+            Nombre
           </label>
           <input
             type="text"
-            id="name"
-            name="user_name"
-            value={formData.user_name}
-            onChange={handleChange}
-            required
-            className="w-full px-4 py-3 bg-white dark:bg-gray-700 border border-gray-300
-             dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent
-              transition-all duration-300"
-            placeholder="Tu nombre"
+            autoComplete="name"
+            maxLength={80}
+            className={inputClassName}
+            {...fieldProps("user_name")}
           />
+          <FieldError id="user_name-error" message={errors.user_name} />
         </div>
 
-        <div>
-          <label htmlFor="subject" className="block text-sm font-medium mb-2">
-            Asunto
-          </label>
-          <input
-            type="text"
-            id="subject"
-            name="user_subject"
-            value={formData.user_subject}
-            onChange={handleChange}
-            required
-            className="w-full px-4 py-3 bg-white dark:bg-gray-700 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2
-             focus:ring-blue-500 focus:border-transparent transition-all duration-300"
-            placeholder="Asunto del mensaje"
-          />
-        </div>
-
-        <div>
-          <label htmlFor="email" className="block text-sm font-medium mb-2">
+        <div className="grid gap-1.5">
+          <label htmlFor="user_email" className={labelClassName}>
             Email
           </label>
           <input
             type="email"
-            id="email"
-            name="user_email"
-            value={formData.user_email}
-            onChange={handleChange}
-            required
-            className="w-full px-4 py-3 bg-white dark:bg-gray-700 border border-gray-300 dark:border-gray-600
-             rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300"
-            placeholder="tu@email.com"
+            autoComplete="email"
+            maxLength={254}
+            className={inputClassName}
+            {...fieldProps("user_email")}
           />
+          <FieldError id="user_email-error" message={errors.user_email} />
         </div>
 
-        <div>
-          <label htmlFor="message" className="block text-sm font-medium mb-2">
-            Mensaje
-          </label>
+        <div className="grid gap-1.5">
+          <div className="flex items-baseline justify-between gap-3">
+            <label htmlFor="message" className={labelClassName}>
+              Mensaje
+            </label>
+            <span className="text-xs tabular-nums text-gray-500 dark:text-gray-400">
+              {formData.message.length} / {MESSAGE_MAX_LENGTH}
+            </span>
+          </div>
           <textarea
-            id="message"
-            name="message"
-            value={formData.message}
-            onChange={handleChange}
-            required
-            rows="6"
-            className="w-full px-4 py-3 bg-white dark:bg-gray-700 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300 resize-none"
-            placeholder="Cuéntame sobre tu proyecto..."
+            rows={4}
+            maxLength={MESSAGE_MAX_LENGTH}
+            placeholder="Cuéntame sobre el puesto o el proyecto"
+            className={`${inputClassName} resize-y`}
+            {...fieldProps("message")}
           />
+          <FieldError id="message-error" message={errors.message} />
         </div>
 
         <button
           type="submit"
-          disabled={loading}
-          className={`w-full font-medium py-3 px-6 rounded-lg transition-all duration-300 hover:shadow-lg hover:-translate-y-0.5 ${
-            loading
-              ? "bg-gray-400 cursor-not-allowed text-gray-200"
-              : "bg-blue-600 hover:bg-blue-700 text-white"
-          }`}
+          disabled={status === "sending"}
+          className="w-full cursor-pointer rounded-lg bg-primary dark:bg-primaryDark px-6 py-3 font-semibold text-gray-950 dark:text-backgroundDark transition hover:brightness-95 disabled:cursor-progress disabled:opacity-60 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primaryInk dark:focus-visible:outline-primaryDark"
         >
-          {loading ? "Enviando..." : "Enviar mensaje"}
+          {status === "sending" ? (
+            "Enviando…"
+          ) : (
+            <>
+              Enviar mensaje <span aria-hidden="true">→</span>
+            </>
+          )}
         </button>
+
+        <div role="status" aria-live="polite">
+          {status === "sent" && (
+            <p className="border-l-[3px] border-primary dark:border-primaryDark pl-3 text-gray-900 dark:text-gray-100">
+              Mensaje enviado. Te responderé a {sentTo}.
+            </p>
+          )}
+          {status === "error" && (
+            <p className="border-l-[3px] border-red-700 dark:border-red-300 pl-3 text-red-700 dark:text-red-300">
+              {submitError}
+            </p>
+          )}
+        </div>
       </form>
     </div>
   )
