@@ -12,7 +12,7 @@ export const Intro = () => {
       <div className="h-full flex items-center justify-center max-sm:items-start py-8 order-2 lg:order-1 lg:py-0">
         <div className="max-w-2xl mx-auto lg:ml-5 text-center lg:text-left">
           <h1 className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-2 md:mb-6">
-            Hola mi nombre es{" "}
+            Hola, mi nombre es{" "}
             <span className="text-primary dark:text-primaryDark text-3xl sm:text-5xl md:text-6xl lg:text-7xl border-b-2 inline-block pb-1">
               Brian Michel
             </span>

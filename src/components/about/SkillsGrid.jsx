@@ -13,7 +13,7 @@ export const SkillsGrid = () => {
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 h-full content-start">
           <HabilitiesLayout habilities={frontendHabilities} label={"Frontend"} />
           <HabilitiesLayout habilities={backendHabilities} label={"Backend"} />
-          <HabilitiesLayout habilities={otherHabilities} label={"Others"} />
+          <HabilitiesLayout habilities={otherHabilities} label={"Otros"} />
         </div>
       </div>
     </div>

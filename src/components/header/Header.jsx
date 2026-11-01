@@ -1,4 +1,6 @@
 import { Toggle } from "./Toggle"
+import { MobileMenu } from "./MobileMenu"
+import { sections } from "./menu"
 import { useContext } from "react"
 import { ActiveSectionContext } from "../../contexts/ActiveSection/ActiveSectionContext"
 
@@ -28,80 +30,29 @@ export const Header = () => {
       <div className="fixed top-2 left-4 z-50">
         <Toggle />
       </div>
-      <div
-        className="fixed top-2 right-4 w-1/2 lg:w-1/3 h-[8vh]
-      bg-white/20 dark:bg-black/20 backdrop-blur-lg
-      rounded-xl shadow-md flex justify-around items-center
-      text-sm text-black/80 dark:text-white/50 font-medium transition-all duration-300 z-50
-      max-sm:hidden"
+      <nav
+        aria-label="Navegación principal"
+        className="fixed top-2 right-4 z-50 hidden lg:flex items-center gap-1 p-1.5
+      bg-white/20 dark:bg-black/20 backdrop-blur-lg rounded-xl shadow-md
+      text-sm text-black/80 dark:text-white/50 font-medium transition-all duration-300"
       >
-        <button
-          className={`hover:dark:text-white transition-colors cursor-pointer hover:dark:bg-black/30 p-4 rounded-xl
-        ${
-          activeSection === "intro"
-            ? "dark:text-white font-extrabold transition-all duration-500"
-            : ""
-        }`}
-          onClick={() => scrollToSection("intro")}
-        >
-          Inicio
-        </button>
-        <button
-          className={`hover:dark:text-white transition-colors cursor-pointer hover:dark:bg-black/30 p-4 rounded-xl
-        ${
-          activeSection === "about-me"
-            ? "dark:text-white font-extrabold transition-all duration-500"
-            : ""
-        }`}
-          onClick={() => scrollToSection("about-me")}
-        >
-          Acerca de mí
-        </button>
-        <button
-          className={`hover:dark:text-white transition-colors cursor-pointer hover:dark:bg-black/30 p-4 rounded-xl
-        ${
-          activeSection === "experience"
-            ? "dark:text-white font-extrabold transition-all duration-500"
-            : ""
-        }`}
-          onClick={() => scrollToSection("experience")}
-        >
-          Experiencia
-        </button>
-        <button
-          className={`hover:dark:text-white transition-colors cursor-pointer hover:dark:bg-black/30 p-4 rounded-xl
-        ${
-          activeSection === "projects"
-            ? "dark:text-white font-extrabold transition-all duration-500"
-            : ""
-        }`}
-          onClick={() => scrollToSection("projects")}
-        >
-          Proyectos
-        </button>
-        <button
-          className={`hover:dark:text-white transition-colors cursor-pointer hover:dark:bg-black/30 p-4 rounded-xl
-        ${
-          activeSection === "certifications"
-            ? "dark:text-white font-extrabold transition-all duration-500"
-            : ""
-        }`}
-          onClick={() => scrollToSection("certifications")}
-        >
-          Certificaciones
-        </button>
-        <button
-          className={`hover:dark:text-white transition-colors cursor-pointer hover:dark:bg-black/30 p-4 rounded-xl
-        ${
-          activeSection === "contact"
-            ? "dark:text-white font-extrabold transition-all duration-500"
-            : ""
-        }`}
-          onClick={() => scrollToSection("contact")}
-        >
-          Contacto
-        </button>
-      </div>
+        {sections.map(({ id, label }) => (
+          <button
+            key={id}
+            type="button"
+            data-label={label}
+            onClick={() => scrollToSection(id)}
+            // El ::after invisible en negrita reserva el ancho del estado activo,
+            // así el menú no cambia de tamaño al pasar de una sección a otra.
+            className={`whitespace-nowrap px-4 py-3 rounded-xl cursor-pointer transition-colors hover:dark:text-white hover:dark:bg-black/30
+            after:block after:h-0 after:overflow-hidden after:invisible after:font-extrabold after:content-[attr(data-label)]
+            ${activeSection === id ? "dark:text-white font-extrabold transition-all duration-500" : ""}`}
+          >
+            {label}
+          </button>
+        ))}
+      </nav>
+      <MobileMenu activeSection={activeSection} onNavigate={scrollToSection} />
     </>
   )
 }

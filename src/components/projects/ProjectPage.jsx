@@ -1,9 +1,12 @@
-import { useState } from "react"
+import { useCallback, useState } from "react"
 import { projects } from "./projects"
 import { ViewMore } from "./ViewMore"
+import { useModal } from "../../hooks/useModal"
 
 export const ProjectPage = () => {
   const [selectedProject, setSelectedProject] = useState(null)
+  const closeProject = useCallback(() => setSelectedProject(null), [])
+  useModal(selectedProject !== null, closeProject)
 
   return (
     <section
@@ -46,10 +49,7 @@ export const ProjectPage = () => {
       </div>
 
       {selectedProject && (
-        <ViewMore
-          selectedProject={selectedProject}
-          setSelectedProject={setSelectedProject}
-        />
+        <ViewMore selectedProject={selectedProject} onClose={closeProject} />
       )}
     </section>
   )

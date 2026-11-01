@@ -1,6 +1,7 @@
-import { useState, useEffect } from "react"
+import { useCallback, useState } from "react"
 import { FiExternalLink } from "react-icons/fi"
 import { certifications } from "./certifications"
+import { useModal } from "../../hooks/useModal"
 
 const categoryStyles = {
   Frontend: "bg-blue-100 text-blue-700 dark:bg-blue-900/50 dark:text-blue-300",
@@ -10,15 +11,8 @@ const categoryStyles = {
 
 export const CertificationsPage = () => {
   const [zoomed, setZoomed] = useState(null)
-
-  useEffect(() => {
-    if (!zoomed) return
-    const onKeyDown = (e) => {
-      if (e.key === "Escape") setZoomed(null)
-    }
-    window.addEventListener("keydown", onKeyDown)
-    return () => window.removeEventListener("keydown", onKeyDown)
-  }, [zoomed])
+  const closeZoom = useCallback(() => setZoomed(null), [])
+  useModal(zoomed !== null, closeZoom)
 
   return (
     <section
@@ -98,12 +92,12 @@ export const CertificationsPage = () => {
           role="dialog"
           aria-modal="true"
           aria-label={`Certificación ${zoomed.title}`}
-          onClick={() => setZoomed(null)}
-          className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 backdrop-blur-sm p-4 cursor-pointer"
+          onClick={closeZoom}
+          className="fixed inset-0 z-60 flex items-center justify-center bg-black/70 backdrop-blur-sm p-4 cursor-pointer"
         >
           <div className="relative max-w-4xl w-full">
             <button
-              onClick={() => setZoomed(null)}
+              onClick={closeZoom}
               aria-label="Cerrar"
               className="absolute -top-10 right-0 text-white text-3xl font-bold hover:text-gray-300"
             >

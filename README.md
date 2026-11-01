@@ -31,7 +31,6 @@ npm install      # instalar dependencias
 npm run dev      # servidor de desarrollo
 npm run build    # compilar para producción
 npm run preview  # previsualizar el build
-npm run deploy   # desplegar en GitHub Pages
 ```
 
 ## 🔗 Enlaces

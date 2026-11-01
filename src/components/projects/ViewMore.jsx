@@ -1,9 +1,23 @@
-export const ViewMore = ({ selectedProject, setSelectedProject }) => {
+export const ViewMore = ({ selectedProject, onClose }) => {
   return (
-    <div className="fixed inset-0 bg-black/50 backdrop-blur-sm flex items-center justify-center z-50 p-4">
-      <div className="bg-white dark:bg-gray-900 text-black dark:text-white p-8 rounded-2xl max-w-lg w-full shadow-xl relative">
+    /* El fondo cierra al pulsar fuera; el teclado se cubre con Escape y el botón Cerrar. */
+    /* eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-static-element-interactions */
+    <div
+      onClick={(e) => {
+        if (e.target === e.currentTarget) onClose()
+      }}
+      className="fixed inset-0 bg-black/50 backdrop-blur-sm flex items-center justify-center z-60 p-4"
+    >
+      <div
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="project-dialog-title"
+        className="bg-white dark:bg-gray-900 text-black dark:text-white p-8 rounded-2xl max-w-lg w-full max-h-[90dvh] overflow-y-auto shadow-xl relative"
+      >
         <button
-          onClick={() => setSelectedProject(null)}
+          type="button"
+          onClick={onClose}
+          aria-label="Cerrar"
           className="absolute top-3 right-4 text-2xl font-bold text-gray-500 hover:text-gray-800 dark:hover:text-gray-200"
         >
           ×
@@ -17,7 +31,9 @@ export const ViewMore = ({ selectedProject, setSelectedProject }) => {
           height="600"
           className="w-full h-56 object-cover rounded-xl mb-5"
         />
-        <h2 className="text-3xl font-bold mb-3">{selectedProject.title}</h2>
+        <h2 id="project-dialog-title" className="text-3xl font-bold mb-3">
+          {selectedProject.title}
+        </h2>
         <p className="text-sm mb-6">{selectedProject.details}</p>
 
         <div className="flex flex-wrap gap-4">
