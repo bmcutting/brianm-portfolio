@@ -20,9 +20,7 @@ export const CertificationsPage = () => {
       data-section="certifications"
       className="bg-white dark:bg-backgroundDark text-black dark:text-white px-6 py-20"
     >
-      <h2 className="text-4xl font-bold text-center mb-12 tracking-tight">
-        Mis Certificaciones
-      </h2>
+      <h2 className="section-title text-center mb-12">Mis Certificaciones</h2>
 
       <div className="grid gap-8 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 place-items-stretch max-w-6xl mx-auto">
         {certifications.map((certification) => (
@@ -62,7 +60,7 @@ export const CertificationsPage = () => {
                 {certification.category}
               </span>
 
-              <h3 className="text-lg font-semibold text-gray-900 dark:text-white leading-snug">
+              <h3 className="font-display text-lg font-semibold tracking-tight text-gray-900 dark:text-white leading-snug">
                 {certification.title}
               </h3>
 

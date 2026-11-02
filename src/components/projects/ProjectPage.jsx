@@ -15,9 +15,7 @@ export const ProjectPage = () => {
       id="projects"
       data-section="projects"
     >
-      <h1 className="text-5xl font-bold text-center mb-12 tracking-tight">
-        Mis Proyectos
-      </h1>
+      <h2 className="section-title text-center mb-12">Mis Proyectos</h2>
       <div className="grid gap-10 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 place-items-center mb-20">
         {projects.map((project) => (
           <div
@@ -34,8 +32,10 @@ export const ProjectPage = () => {
               className="w-full h-48 object-cover"
             />
             <div className="p-6">
-              <h2 className="text-2xl font-semibold mb-3">{project.title}</h2>
-              <p className="text-sm text-gray-600 dark:text-gray-300 mb-5">
+              <h3 className="font-display text-2xl font-semibold tracking-tight mb-3">
+                {project.title}
+              </h3>
+              <p className="text-sm leading-relaxed text-gray-600 dark:text-gray-300 mb-5">
                 {project.description}
               </p>
               <button

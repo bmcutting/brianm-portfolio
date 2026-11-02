@@ -31,7 +31,10 @@ export const ViewMore = ({ selectedProject, onClose }) => {
           height="600"
           className="w-full h-56 object-cover rounded-xl mb-5"
         />
-        <h2 id="project-dialog-title" className="text-3xl font-bold mb-3">
+        <h2
+          id="project-dialog-title"
+          className="font-display text-3xl font-semibold tracking-tight mb-3"
+        >
           {selectedProject.title}
         </h2>
         <p className="text-sm mb-6">{selectedProject.details}</p>

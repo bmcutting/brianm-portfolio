@@ -1,7 +1,7 @@
 export const HabilitiesLayout = ({ habilities, label }) => {
   return (
     <div className="bg-violet-50 dark:bg-gray-800 rounded-2xl lg:p-2 gap-3 p-4">
-      <h3 className="text-2xl font-bold text-center text-gray-900 dark:text-white mb-4">
+      <h3 className="font-display text-2xl font-semibold tracking-tight text-center text-gray-900 dark:text-white mb-4">
         {label}
       </h3>
       <div className="grid grid-cols-2 items-center gap-2 lg:mb-8">

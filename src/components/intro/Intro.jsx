@@ -11,16 +11,21 @@ export const Intro = () => {
     >
       <div className="h-full flex items-center justify-center max-sm:items-start py-8 order-2 lg:order-1 lg:py-0">
         <div className="max-w-2xl mx-auto lg:ml-5 text-center lg:text-left">
-          <h1 className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-2 md:mb-6">
-            Hola, mi nombre es{" "}
-            <span className="text-primary dark:text-primaryDark text-3xl sm:text-5xl md:text-6xl lg:text-7xl border-b-2 inline-block pb-1">
+          <h1 className="font-display mb-4 md:mb-6">
+            <span className="block text-xl sm:text-2xl md:text-3xl font-medium tracking-tight text-gray-600 dark:text-gray-400">
+              Hola, mi nombre es
+            </span>{" "}
+            <span className="inline-block mt-2 pb-1 border-b-2 text-5xl sm:text-6xl md:text-7xl font-bold tracking-tighter leading-none text-primary dark:text-primaryDark">
               Brian Michel
             </span>
           </h1>
-          <p className="uppercase text-lg sm:text-xl md:text-2xl lg:text-3xl tracking-wide sm:tracking-wider font-bold">
+          <p
+            className="flex items-center justify-center lg:justify-start gap-3 mb-4 md:mb-6 font-mono text-sm sm:text-base font-medium uppercase tracking-[0.18em]
+            before:h-0.5 before:w-7 before:bg-primary dark:before:bg-primaryDark"
+          >
             Desarrollador Fullstack
           </p>
-          <p className="text-sm sm:text-lg md:text-xl lg:text-2xl text-justify text-gray-600 dark:text-gray-400 md:leading-relaxed">
+          <p className="max-w-[60ch] mx-auto lg:mx-0 text-base sm:text-lg md:text-xl leading-relaxed text-gray-600 dark:text-gray-400">
             Ingeniero en Automática con perfil híbrido entre automatización industrial y
             desarrollo fullstack. Backend con{" "}
             <strong className="text-[#7c5cff] animate-pulse drop-shadow-md">

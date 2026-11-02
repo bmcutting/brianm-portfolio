@@ -58,7 +58,7 @@ export const MobileMenu = ({ activeSection, onNavigate }) => {
               type="button"
               onClick={() => handleNavigate(id)}
               className={`w-full text-left px-4 py-3 rounded-lg cursor-pointer transition-colors hover:bg-black/5 dark:hover:bg-white/10 ${
-                activeSection === id ? "text-black dark:text-white font-extrabold" : ""
+                activeSection === id ? "text-black dark:text-white font-semibold" : ""
               }`}
             >
               {label}

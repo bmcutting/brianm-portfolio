@@ -1,3 +1,6 @@
+@import "@fontsource-variable/space-grotesk";
+@import "@fontsource-variable/inter";
+@import "@fontsource-variable/jetbrains-mono";
 @import "tailwindcss";
 
 /* Tailwind v4: activar la variante `dark:` según la clase en <html>
@@ -11,6 +14,32 @@
   --color-primaryInk: #2f7a2d;
   --color-background: #ffffff;
   --color-backgroundDark: #1e1f25;
+
+  /* Tres roles: títulos (display), texto (sans) y datos técnicos (mono). */
+  --font-display: "Space Grotesk Variable", ui-sans-serif, system-ui, sans-serif;
+  --font-sans: "Inter Variable", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono Variable", ui-monospace, monospace;
+}
+
+@layer base {
+  body {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  h1,
+  h2,
+  h3,
+  h4 {
+    text-wrap: balance;
+  }
+  p {
+    text-wrap: pretty;
+  }
+}
+
+/* Estilo único para los títulos de sección (todos <h2>; el único <h1> es el del hero). */
+@utility section-title {
+  @apply font-display text-4xl md:text-5xl font-semibold tracking-tight;
 }
 
 @media (prefers-reduced-motion: reduce) {

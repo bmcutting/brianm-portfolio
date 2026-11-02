@@ -4,7 +4,9 @@ import { articles } from "./articlesData"
 export const Articles = () => {
   return (
     <div className="max-w-3xl mx-auto">
-      <h2 className="text-3xl font-bold text-center mb-8">Artículos</h2>
+      <h3 className="font-display text-3xl font-semibold tracking-tight text-center mb-8">
+        Artículos
+      </h3>
       <div className="flex flex-col gap-6">
         {articles.map((article) => (
           <a
@@ -16,7 +18,9 @@ export const Articles = () => {
           >
             <FaDev className="text-6xl shrink-0" aria-hidden="true" />
             <div>
-              <h3 className="text-lg font-semibold mb-1">{article.title}</h3>
+              <h4 className="font-display text-lg font-semibold tracking-tight mb-1">
+                {article.title}
+              </h4>
               <p className="text-sm text-gray-600 dark:text-gray-300">
                 {article.description}
               </p>

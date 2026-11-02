@@ -1,7 +1,7 @@
 import { MESSAGE_MAX_LENGTH, useContactForm } from "../../hooks/useContactForm"
 
 const labelClassName =
-  "text-xs uppercase tracking-wider font-semibold text-gray-600 dark:text-gray-400"
+  "font-mono text-xs uppercase tracking-wider font-medium text-gray-600 dark:text-gray-400"
 
 const inputClassName =
   "w-full rounded-lg border border-gray-300 dark:border-white/15 bg-white dark:bg-white/5 px-3.5 py-2.5 text-gray-900 dark:text-gray-100 placeholder:text-gray-500 dark:placeholder:text-gray-400 transition-colors focus:outline-none focus:border-primaryInk dark:focus:border-primaryDark aria-[invalid=true]:border-red-700 aria-[invalid=true]:focus:border-red-700 dark:aria-[invalid=true]:border-red-300 dark:aria-[invalid=true]:focus:border-red-300"
@@ -40,12 +40,12 @@ export const ContactForm = () => {
 
   return (
     <div>
-      <h2
+      <h3
         id="contact-form-title"
-        className="text-2xl sm:text-3xl font-bold tracking-tight mb-2"
+        className="font-display text-2xl sm:text-3xl font-semibold tracking-tight mb-2"
       >
         Envíame un mensaje
-      </h2>
+      </h3>
       <p className="mb-8 text-gray-600 dark:text-gray-400">Te respondo por email.</p>
       <form
         ref={formRef}

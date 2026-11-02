@@ -16,7 +16,9 @@ export class ErrorBoundary extends Component {
 
     return (
       <main className="min-h-screen flex flex-col items-center justify-center px-6 text-center bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100">
-        <h1 className="text-2xl font-semibold">Algo ha salido mal</h1>
+        <h1 className="font-display text-2xl font-semibold tracking-tight">
+          Algo ha salido mal
+        </h1>
         <p className="mt-2 max-w-md text-gray-600 dark:text-gray-400">
           Se ha producido un error inesperado al mostrar esta página. Puedes recargarla o
           escribirme si el problema persiste.

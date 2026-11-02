@@ -45,8 +45,8 @@ export const Header = () => {
             // El ::after invisible en negrita reserva el ancho del estado activo,
             // así el menú no cambia de tamaño al pasar de una sección a otra.
             className={`whitespace-nowrap px-4 py-3 rounded-xl cursor-pointer transition-colors hover:dark:text-white hover:dark:bg-black/30
-            after:block after:h-0 after:overflow-hidden after:invisible after:font-extrabold after:content-[attr(data-label)]
-            ${activeSection === id ? "dark:text-white font-extrabold transition-all duration-500" : ""}`}
+            after:block after:h-0 after:overflow-hidden after:invisible after:font-semibold after:content-[attr(data-label)]
+            ${activeSection === id ? "dark:text-white font-semibold transition-all duration-500" : ""}`}
           >
             {label}
           </button>

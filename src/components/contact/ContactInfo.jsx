@@ -4,7 +4,7 @@ import { CONTACT_EMAIL } from "../../hooks/useContactForm"
 
 const InfoRow = ({ label, children }) => (
   <div className="grid grid-cols-1 sm:grid-cols-[7.5rem_minmax(0,1fr)] items-center gap-x-4 gap-y-1 py-3.5 border-t border-gray-200 dark:border-white/10">
-    <dt className="text-xs uppercase tracking-wider text-gray-600 dark:text-gray-400">
+    <dt className="font-mono text-xs uppercase tracking-wider text-gray-600 dark:text-gray-400">
       {label}
     </dt>
     <dd className="min-w-0 font-semibold">{children}</dd>
@@ -29,9 +29,7 @@ const ExternalLink = ({ href, children }) => (
 export const ContactInfo = () => {
   return (
     <div>
-      <h1 className="text-5xl sm:text-6xl font-bold tracking-tighter leading-none mb-3">
-        Contacto
-      </h1>
+      <h2 className="section-title leading-none mb-3">Contacto</h2>
       <p className="max-w-sm text-gray-600 dark:text-gray-400">
         Escríbeme por donde te resulte más cómodo o usa el formulario.
       </p>
