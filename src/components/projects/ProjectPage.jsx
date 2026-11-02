@@ -1,6 +1,7 @@
 import { useCallback, useState } from "react"
 import { projects } from "./projects"
 import { ViewMore } from "./ViewMore"
+import { Articles } from "./Articles"
 import { useModal } from "../../hooks/useModal"
 
 export const ProjectPage = () => {
@@ -47,6 +48,8 @@ export const ProjectPage = () => {
           </div>
         ))}
       </div>
+
+      <Articles />
 
       {selectedProject && (
         <ViewMore selectedProject={selectedProject} onClose={closeProject} />

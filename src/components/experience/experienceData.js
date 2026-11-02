@@ -2,10 +2,10 @@ export const experience = [
   {
     role: "Desarrollador Frontend",
     company: "DealerNode",
-    period: "Marzo 2026 – Actualidad",
+    period: "Diciembre 2025 – Actualidad",
     location: "Remoto",
     description:
-      "Desarrollo de features completas (formularios, tablas con filtrado y paginación, modales y flujos multipaso) sobre un ERP automotriz. Integración con APIs REST mediante servicios HTTP tipados y patrón Mapper para la conversión DTO → dominio.",
+      "Desarrollo de features para DealerNode, un ERP automotriz utilizado por concesionarios, que reúne en una sola aplicación procesos que antes se gestionaban en hojas de Excel. Desarrollo del módulo de calendario de pagos para visualizar y gestionar los pagos de los clientes, y de componentes de UI en toda la plataforma (formularios, modales y tablas con filtrado y paginación). Integración con las APIs REST del backend mediante servicios HTTP tipados y patrón Mapper para la conversión DTO → dominio.",
     stack: [
       "React 19",
       "TypeScript",
@@ -18,16 +18,16 @@ export const experience = [
   {
     role: "Desarrollador Backend .NET",
     company: "",
-    period: "Noviembre 2025 – Enero 2026",
-    location: "",
+    period: "Octubre 2025 – Diciembre 2025",
+    location: "La Habana, Cuba",
     description:
-      "Desarrollo de la API REST de una aplicación de mensajería en .NET / C#. Diseño de endpoints, modelado de datos y capa de persistencia.",
-    stack: [".NET", "C#", "APIs REST"],
+      "Desarrollo de funcionalidades para la API REST de una aplicación de paquetería en .NET / C#. Implementación de endpoints CRUD y consultas a base de datos PostgreSQL, y desarrollo del módulo de generación de informes en PDF.",
+    stack: [".NET", "C#", "APIs REST", "PostgreSQL"],
   },
   {
     role: "Desarrollador de Software (Prácticas profesionales)",
-    company: "",
-    period: "Octubre 2024 – Agosto 2025",
+    company: "EMSI FARMA TECH",
+    period: "Octubre 2024 – Julio 2025",
     location: "La Habana, Cuba",
     description:
       "Desarrollo de la capa de borde de un sistema MES (Manufacturing Execution System) sobre arquitectura de microservicios edge-fog-cloud. Implementación de la comunicación con dispositivos industriales (Modbus TCP/RTU, PROFINET, S7 y MQTT) y del módulo de detección de alarmas y eventos en tiempo real.",

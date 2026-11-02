@@ -18,23 +18,22 @@ export const Intro = () => {
             </span>
           </h1>
           <p className="uppercase text-lg sm:text-xl md:text-2xl lg:text-3xl tracking-wide sm:tracking-wider font-bold">
-            Desarrollador de Software
+            Desarrollador Fullstack
           </p>
           <p className="text-sm sm:text-lg md:text-xl lg:text-2xl text-justify text-gray-600 dark:text-gray-400 md:leading-relaxed">
-            Desarrollador con experiencia en software industrial y programación en{" "}
+            Ingeniero en Automática con perfil híbrido entre automatización industrial y
+            desarrollo fullstack. Backend con{" "}
             <strong className="text-[#7c5cff] animate-pulse drop-shadow-md">
               .NET (C#)
+            </strong>{" "}
+            y PostgreSQL, frontend con{" "}
+            <strong className="text-[#61dafb] animate-pulse drop-shadow-md">React</strong>{" "}
+            y{" "}
+            <strong className="text-[#3178c6] animate-pulse drop-shadow-md">
+              TypeScript
             </strong>
-            . Actualmente enfocado en frontend, creando interfaces modernas con{" "}
-            <strong className="text-[#61dafb] animate-pulse drop-shadow-md">React</strong>
-            ,{" "}
-            <strong className="text-[#38bdf8] animate-pulse drop-shadow-md">
-              Tailwind CSS
-            </strong>
-            ,{" "}
-            <strong className="text-[#e34c26] animate-pulse drop-shadow-md">HTML</strong>{" "}
-            y <strong className="text-[#264de4] animate-pulse drop-shadow-md">CSS</strong>
-            .
+            , e integración de dispositivos industriales mediante Modbus, PROFINET, S7 y
+            MQTT.
           </p>
         </div>
       </div>

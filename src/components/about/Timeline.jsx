@@ -11,7 +11,7 @@ export const Timeline = () => {
         <TimeLineList
           title={"💼 Experiencia profesional"}
           description={
-            "Prácticas profesionales como especialista en software industrial."
+            "Frontend en DealerNode, backend .NET y prácticas en software industrial (MES) en EMSI Farma Tech."
           }
         />
         <TimeLineList

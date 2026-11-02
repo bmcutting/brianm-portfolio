@@ -10,7 +10,7 @@ export const certifications = [
     id: 1,
     title: "EF SET English Certificate",
     issuer: "EF SET",
-    date: "2025",
+    date: "2024",
     category: "Idioma",
     img: EFSET,
     link: "https://cert.efset.org/VQfdLP",

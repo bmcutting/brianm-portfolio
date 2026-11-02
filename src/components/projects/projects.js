@@ -8,7 +8,7 @@ export const projects = [
     description:
       "Desarrollo frontend de features end-to-end sobre un ERP automotriz en React 19 y TypeScript.",
     details:
-      "Aplicación ERP para concesionarios (DealerNode) sobre la que desarrollo features completas: formularios, tablas con filtrado y paginación, modales y flujos multipaso. La integración con las APIs REST se realiza mediante servicios HTTP tipados y un patrón Mapper para la conversión DTO → dominio. Stack: React 19, TypeScript, Vite, Tailwind CSS 4, React Router 7 y Axios.",
+      "Aplicación ERP para concesionarios (DealerNode) que reúne en una sola aplicación procesos que antes se gestionaban en hojas de Excel. Desarrollo features completas, como el módulo de calendario de pagos, además de formularios, tablas con filtrado y paginación, modales y flujos multipaso. La integración con las APIs REST se realiza mediante servicios HTTP tipados y un patrón Mapper para la conversión DTO → dominio. Stack: React 19, TypeScript, Vite, Tailwind CSS 4, React Router 7 y Axios.",
     github: null,
     deploy: "https://www.dealernode.net/",
     image: Car,
@@ -18,7 +18,7 @@ export const projects = [
     description:
       "Proyecto en .NET/C# basado en microservicios para la integración de dispositivos industriales mediante múltiples protocolos.",
     details:
-      "Proyecto desarrollado en .NET con una arquitectura de microservicios orientada a la Computación al Borde (Edge Computing). Implementa una interfaz IIoT que permite comunicarse con distintos dispositivos industriales y fuentes de datos, independientemente del protocolo utilizado (Modbus, MQTT, OPC UA, entre otros). La solución abstrae la lógica de negocio de cada protocolo mediante servicios independientes, promoviendo escalabilidad, bajo acoplamiento y fácil mantenimiento. Incluye monitoreo y procesamiento de alarmas y eventos.",
+      "Proyecto desarrollado en .NET con una arquitectura de microservicios orientada a la Computación al Borde (Edge Computing). Implementa una interfaz IIoT que permite comunicarse con distintos dispositivos industriales y fuentes de datos, independientemente del protocolo utilizado (Modbus TCP/RTU, PROFINET, S7 y MQTT). La solución abstrae la lógica de negocio de cada protocolo mediante servicios independientes, promoviendo escalabilidad, bajo acoplamiento y fácil mantenimiento. Incluye monitoreo y procesamiento de alarmas y eventos.",
     github: null,
     deploy: null,
     image: EdgeComputing,
